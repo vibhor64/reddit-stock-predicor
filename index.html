@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goofy Ahh Predictions</title>
+    <link rel="icon" href="rdd.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="heading">
+        <h1>Reddit Based Stock Predictor</h1>
+    </div>
+    <img class="svg-button" src="rdd.svg" alt="SVG Button">
+
+    <div class="container">
+        <button class="button" id="button1" onclick="markClicked(this)">Day</button>
+        <button class="button" onclick="markClicked(this)">Week</button>
+        <button class="button" onclick="markClicked(this)">Month</button>
+        <button class="button" onclick="markClicked(this)">Year</button>
+    </div>
+
+    <script>
+        window.onload = function () {
+            var defaultButton = document.getElementById('button1');
+            markClicked(defaultButton);
+        };
+
+        function markClicked(button) {
+            // Remove the "clicked-button" class from all buttons
+            var buttons = document.querySelectorAll('button');
+            buttons.forEach(function (btn) {
+                btn.classList.remove('clicked-button');
+                btn.id = '';
+            });
+
+            // Add the "clicked-button" class to the clicked button
+            button.classList.add('clicked-button');
+
+            // You can also add an ID to the clicked button if needed
+            button.id = 'clicked-button';
+
+        }
+    </script>
+
+</body>
+
+</html>
